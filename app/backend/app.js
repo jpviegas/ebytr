@@ -1,5 +1,5 @@
 import cors from 'cors';
-import * as dotenv from 'dotenv/config';
+import 'dotenv/config';
 import express, { json } from 'express';
 import router from './routes/tasksRouter.js';
 
@@ -14,3 +14,5 @@ app.use('/tasks', router);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+export default app;

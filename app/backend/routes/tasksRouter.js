@@ -1,27 +1,20 @@
-import express from 'express';
-import { createTask, deleteTask, getAllTasks } from '../models/Task.js';
+import { Router } from 'express';
+import {
+  createTask, deleteTask, getAllTasks, orderByDate,
+} from '../controllers/taskController.js';
+import { validateStatus, validateStatusExists, validateStatusLength } from '../middlewares/validateStatus.js';
+import { validateTaskExists, validateTaskLength } from '../middlewares/validateTask.js';
 
-const router = express.Router();
+const router = Router();
 
-router.get('/', async (_req, res) => {
-  const tasks = await getAllTasks();
+// router.route('/')
+//   .get('/', getAllTasks)
+//   .post('/', createTask)
+//   .delete('/', deleteTask);
+router.get('/', getAllTasks, orderByDate);
 
-  res.status(200).json(tasks);
-});
+router.post('/', validateTaskExists, validateTaskLength, validateStatus, validateStatusExists, validateStatusLength, validateStatus, createTask);
 
-router.post('/', async (req, res) => {
-  const { task, status } = req.body;
-  const date = new Date();
-  await createTask({ task, status, date });
-
-  res.status(201).json({ message: 'Successfully created' });
-});
-
-router.delete('/', async (req, res) => {
-  const { id } = req.body;
-  await deleteTask(id);
-
-  res.status(200).json({ message: 'Successfully deleted' });
-});
+router.delete('/', deleteTask);
 
 export default router;

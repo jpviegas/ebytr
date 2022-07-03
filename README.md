@@ -1,11 +1,11 @@
 # ebytr
 
-Front-End
-# React
+## Front-End
+React
 
-Back-End
-# Node
-# Express
+## Back-End
+Node
+Express
 
-Database
-# MySQL
+## Database
+MySQL

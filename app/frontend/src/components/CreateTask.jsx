@@ -13,7 +13,7 @@ function CreateTask() {
     setStatus(event.target.value);
   };
 
-  const createTask = () => (
+  const createTask = async () => (
     axios.post(url, { task, status })
   );
   return (
