@@ -1,6 +1,6 @@
 import * as taskService from '../services/taskService.js';
 
-export const getAllTasks = async (_req, res) => {
+export const getAllTasks = async (req, res) => {
   const tasks = await taskService.getAllTasks();
 
   res.status(200).json(tasks);
@@ -20,5 +20,3 @@ export const deleteTask = async (req, res) => {
 
   res.status(200).json({ message: 'Successfully deleted' });
 };
-
-export const orderByDate = async (_req, res) => res.status(200).json({ message: 'Successfully ordered' });

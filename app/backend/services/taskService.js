@@ -11,5 +11,3 @@ export const createTask = async ({ task, status, date }) => taskModel.createTask
 );
 
 export const deleteTask = async (id) => taskModel.deleteTask(id);
-
-export const orderByDate = async () => taskModel.orderByDate();

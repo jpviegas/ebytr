@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import './createtask.css';
 
 function CreateTask() {
   const [task, setTask] = useState('');
@@ -17,8 +18,8 @@ function CreateTask() {
     axios.post(url, { task, status })
   );
   return (
-    <div>
-      <input type="text" name="tasks" id="tasks" onChange={getTask} placeholder="type your task here" />
+    <div className="createTask">
+      <input type="text" name="tasks" id="tasks" maxLength="31" placeholder="digite sua tarefa aqui..." onChange={getTask}/>
 
       <label htmlFor="pendente">
         Pendente
@@ -33,12 +34,9 @@ function CreateTask() {
         <input type="radio" name="status" id="pronto" value="pronto" onClick={getStatus} />
       </label>
 
-      <br />
-      <br />
-
-      <button type="button" onClick={createTask}>
-        Create Task
-      </button>
+      <div className="createTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={createTask}>
+        Criar tarefa
+      </div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.createTask {
+  align-items: center;
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem ;
+  padding-bottom: 1rem;
+}
+
+.createTaskButton {
+  background-color: #3590F3;
+  color: #EAEAEA;
+  padding: .5rem;
+  border-radius: .5rem;
+  border-style: unset;
+}
+
+.createTaskButton:hover {
+  background-color: #963484;
+  color: #0D0106;
+}
+
+@media only screen and (max-width: 700px){
+  .createTask {
+    flex-direction: column;
+  }
+}

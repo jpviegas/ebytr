@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {
-  createTask, deleteTask, getAllTasks, orderByDate,
+  createTask, deleteTask, getAllTasks,
 } from '../controllers/taskController.js';
 import { validateStatus, validateStatusExists, validateStatusLength } from '../middlewares/validateStatus.js';
 import { validateTaskExists, validateTaskLength } from '../middlewares/validateTask.js';
@@ -11,7 +11,7 @@ const router = Router();
 //   .get('/', getAllTasks)
 //   .post('/', createTask)
 //   .delete('/', deleteTask);
-router.get('/', getAllTasks, orderByDate);
+router.get('/', getAllTasks);
 
 router.post('/', validateTaskExists, validateTaskLength, validateStatus, validateStatusExists, validateStatusLength, validateStatus, createTask);
 

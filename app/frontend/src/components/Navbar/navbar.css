@@ -1,0 +1,22 @@
+nav {
+  align-items: center;
+  background: #963484;
+  color: #EAEAEA;
+  display: flex;
+  height: 3em;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 100%;
+}
+
+nav a {
+  color: #EAEAEA;
+}
+
+nav a:hover {
+  color: #0D0106;
+}
+
+nav > a:active {
+  color: #67EFE9;
+}

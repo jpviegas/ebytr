@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './taskslist.css';
 
-function FetchApi() {
+function TasksList() {
   const [data, setData] = useState([]);
   const url = 'http://localhost:3001/tasks';
   useEffect(() => {
@@ -28,9 +29,9 @@ function FetchApi() {
 
   };
   const fetchMap = data.map((task) => (
-    <>
+    <div className="tasksListItem">
       <li>
-        Task:
+        Tarefa:
         {task.task}
       </li>
       <li>
@@ -38,23 +39,27 @@ function FetchApi() {
         {task.status}
       </li>
       <li>
-        Date:
+        Data:
         {task.date}
       </li>
-      <button type="button" onClick={() => { deleteTask(task.id); }}>delete</button>
-      <br />
-      <br />
-    </>
+      <div className="deleteTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={() => { deleteTask(task.id); }}>
+        Deletar tarefa
+      </div>
+    </div>
   ));
 
   return (
-    <div>
-      <button type="button" onClick={orderByTasks}>Order By Task</button>
-      <button type="button" onClick={orderByStatus}>Order By Status</button>
-      <button type="button" onClick={orderByDate}>Order By Date</button>
+    <div className="tasksList">
+      <label htmlFor="order">Ordenar por</label>
+      <select>
+        <option value="task" selected>selecione</option>
+        <option value="task" onClick={orderByTasks}>task</option>
+        <option value="status" onClick={orderByStatus}>status</option>
+        <option value="date" onClick={orderByDate}>data</option>
+      </select>
       {!data ? null : <ul>{fetchMap}</ul>}
     </div>
   );
 }
 
-export default FetchApi;
+export default TasksList;

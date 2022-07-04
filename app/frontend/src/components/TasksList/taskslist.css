@@ -1,0 +1,43 @@
+ul {
+  list-style: none;
+}
+
+li { 
+  margin: auto;
+}
+
+.tasksList {
+  background-color: #CBC5EA;
+}
+
+.tasksListItem {
+  align-items: center;
+  display: flex;
+  padding: 1rem;
+}
+
+.tasksListItem:hover {
+  border-radius: 1rem;
+  border-color: #0D0106;
+  border-width: 2rem;
+  border-collapse: separate;
+}
+
+.deleteTaskButton {
+  background-color: #e71f1f;
+  border-radius: .5rem;
+  color: #EAEAEA;
+  padding: .2rem;
+  margin: auto;
+}
+
+.deleteTaskButton:hover {
+  background-color: #963484;
+  color: #0D0106;
+}
+
+@media only screen and (max-width: 700px){
+  .tasksListItem {
+    flex-direction: column;
+  }
+}
