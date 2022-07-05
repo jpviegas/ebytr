@@ -2,10 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import About from './pages/About';
-import ErrorPage from './pages/ErrorPage';
-import Home from './pages/Home';
-import TaskById from './pages/TaskById';
+import About from './pages/About/About';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Home from './pages/Home/Home';
+import TaskById from './pages/TaskById/TaskById';
 import Tasks from './pages/Tasks';
 
 function App() {

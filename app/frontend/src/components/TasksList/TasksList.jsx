@@ -13,7 +13,7 @@ function TasksList() {
         setData(response.data);
       });
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   }, [data]);
 
@@ -22,7 +22,7 @@ function TasksList() {
   };
 
   const fetchMap = data.map((task) => (
-    <div className="tasksListItem">
+    <div className="tasksListItem" key={task.id}>
       <li>
         Tarefa:
         {task.task}
@@ -47,21 +47,21 @@ function TasksList() {
   ));
 
   return (
-    <>
-    <div className="tasksList">
-      <label htmlFor="order">Ordenar por</label>
-      <select>
-        <option value="" selected>selecione</option>
-        <option value="task">task</option>
-        <option value="status">status</option>
-        <option value="date">data</option>
-      </select>
-      {!data ? null : <ul>{fetchMap}</ul>}
-    </div>
+    <div className="taskListContainer">
+      <div className="tasksList">
+        <label htmlFor="order">Ordenar por</label>
+        <select>
+          <option value="order" id="order">selecione</option>
+          <option value="task">task</option>
+          <option value="status">status</option>
+          <option value="date">data</option>
+        </select>
+        {!data ? null : <ul>{fetchMap}</ul>}
+      </div>
       <div className="deleteAllTasksButton" role="button" onKeyDown={null} tabIndex={0} onClick={() => { deleteTask(0); }}>
         Deletar todas as tarefas
       </div>
-    </>
+    </div>
   );
 }
 

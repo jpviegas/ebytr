@@ -8,26 +8,25 @@ function TaskById() {
   const baseUrl = 'http://localhost:3001/tasks';
   const url = `http://localhost:3001/tasks/${params.id}`;
   const [data, setData] = useState([]);
+  const [task, setTask] = useState('');
+  const [status, setStatus] = useState('pendente');
+
   useEffect(() => {
     try {
       axios.get(url).then((response) => {
         setData(response.data);
       });
     } catch (error) {
-      console.log(error);
+      throw new Error(error);
     }
   }, [data]);
-  const [task, setTask] = useState('');
-  const [status, setStatus] = useState('');
 
   const getTask = (event) => {
     setTask(event.target.value);
-    console.log('task', task);
   };
 
   const getStatus = (event) => {
     setStatus(event.target.value);
-    console.log('status', status);
   };
 
   const editTask = async () => (
@@ -39,7 +38,7 @@ function TaskById() {
   };
 
   const fetchMap = data.map((item) => (
-    <div>
+    <div key={item.id}>
       <li>
         Tarefa:
         {item.task}
@@ -61,7 +60,7 @@ function TaskById() {
   return (
     <>
       <div className="editTask">
-        <input type="text" name="tasks" id="tasks" maxLength="3" placeholder="digite sua tarefa aqui..." onChange={getTask} required />
+        <input type="text" name="tasks" id="tasks" maxLength="30" placeholder="digite sua tarefa aqui..." onKeyDown={(e) => ((e.key === 'Enter') ? editTask() : null)} onChange={getTask} required />
 
         <label htmlFor="pendente">
           Pendente
@@ -75,14 +74,14 @@ function TaskById() {
           Pronto
           <input type="radio" name="status" id="pronto" value="pronto" onClick={getStatus} />
         </label>
-        <div className="finishTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={editTask}>
+
+        <div className="finishTaskButton" role="button" onKeyDown={(e) => ((e.key === 'Enter') ? editTask() : null)} tabIndex={0} onClick={editTask}>
           Finalizar
         </div>
       </div>
+
       <div className="editContainer">
-        <div className="taskItem">
-          {!data ? null : <ul>{fetchMap}</ul>}
-        </div>
+        {!data[0] ? null : <div className="taskItem"><ul>{fetchMap}</ul></div>}
       </div>
     </>
   );

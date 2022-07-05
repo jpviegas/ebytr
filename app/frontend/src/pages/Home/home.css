@@ -1,0 +1,10 @@
+.home {
+  align-items: center;
+  display: flex;
+  background-image: linear-gradient(140deg, #EAEAEA 0%, #BC70A4 50%, #963484 75%);
+  flex-direction: column;
+  height: 100%;
+  padding: 4rem;
+  justify-content: space-evenly;
+  width: 100%;
+}

@@ -1,5 +1,5 @@
 footer {
-  background-color: #963484;
+  background-image: linear-gradient(to right, #EAEAEA, #963484 10%);
   display: flex;
   justify-content: center;
   padding: .2rem;

@@ -10,7 +10,18 @@ label {
   cursor: pointer;
 }
 
+.taskListContainer {
+  align-items: center;
+  background-image: linear-gradient(140deg, #EAEAEA 0%, #BC70A4 50%, #963484 75%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
 .tasksList {
+  /* padding: 4rem; */
   width: 80%;
 }
 

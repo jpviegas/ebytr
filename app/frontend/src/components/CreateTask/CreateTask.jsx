@@ -4,8 +4,9 @@ import './createtask.css';
 
 function CreateTask() {
   const [task, setTask] = useState('');
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState('pendente');
   const url = 'http://localhost:3001/tasks';
+
   const getTask = (event) => {
     setTask(event.target.value);
   };
@@ -20,7 +21,8 @@ function CreateTask() {
 
   return (
     <div className="createTask">
-      <input type="text" name="tasks" id="tasks" maxLength="3" placeholder="digite sua tarefa aqui..." onChange={getTask} required />
+      <p>Crie sua tarefa:</p>
+      <input type="text" name="tasks" id="tasks" maxLength="30" placeholder="digite sua tarefa aqui..." onKeyDown={(e) => ((e.key === 'Enter') ? createTask() : null)} onChange={getTask} required />
 
       <label htmlFor="pendente">
         Pendente
@@ -35,7 +37,7 @@ function CreateTask() {
         <input type="radio" name="status" id="pronto" value="pronto" onClick={getStatus} />
       </label>
 
-      <div className="createTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={createTask}>
+      <div className="createTaskButton" role="button" onKeyDown={(e) => ((e.key === 'Enter') ? createTask() : null)} tabIndex={0} onClick={createTask}>
         Criar tarefa
       </div>
     </div>

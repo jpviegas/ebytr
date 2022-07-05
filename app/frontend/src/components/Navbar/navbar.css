@@ -1,6 +1,6 @@
 nav {
   align-items: center;
-  background: #963484;
+  background-image: linear-gradient(to right, #963484 90%, #EAEAEA);
   color: #EAEAEA;
   display: flex;
   padding: 1rem;
