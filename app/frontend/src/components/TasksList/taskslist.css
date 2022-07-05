@@ -6,38 +6,95 @@ li {
   margin: auto;
 }
 
+label {
+  cursor: pointer;
+}
+
 .tasksList {
-  background-color: #CBC5EA;
+  width: 80%;
+}
+
+.tasksList ul {
+  display: flex;
+  flex-direction: column;
 }
 
 .tasksListItem {
-  align-items: center;
+  border-bottom: #0D0106 dashed thin;
   display: flex;
   padding: 1rem;
+  width: 100%;
 }
 
 .tasksListItem:hover {
-  border-radius: 1rem;
-  border-color: #0D0106;
-  border-width: 2rem;
-  border-collapse: separate;
+  transform: scaleX(1.01);
+  transition: 1s;
+}
+
+.editTaskButton {
+  background-color: #3590F3;
+  border-radius: .5rem;
+  padding: .2rem;
+  text-align: center;
+  margin: auto;
+}
+
+.editTaskButton a {
+  color: #EAEAEA;
+}
+
+.editTaskButton:hover, .editTaskButton a:hover {
+  color: #0D0106;
+  transform: scale(1.1);
+  transition-duration: .5s;
+}
+
+.editTaskButton:hover {
+  background-color: #963484;
+}
+
+.editTaskButton:active {
+  transform: translateX(2rem);
+  transition-duration: .5s;
 }
 
 .deleteTaskButton {
   background-color: #e71f1f;
   border-radius: .5rem;
   color: #EAEAEA;
-  padding: .2rem;
   margin: auto;
+  padding: .2rem;
+  text-align: center;
 }
 
 .deleteTaskButton:hover {
+  transform: scale(1.1);
+  transition-duration: .5s;
+}
+
+.deleteTaskButton:active {
+  transform: translateY(2em);
+  transition-duration: .5s;
+}
+
+.deleteAllTasksButton {
+  background-color: #e71f1f;
+  border-radius: .5rem;
+  color: #EAEAEA;
+  padding: .4rem;
+}
+
+.deleteAllTasksButton:hover {
   background-color: #963484;
   color: #0D0106;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: .5s;
 }
 
 @media only screen and (max-width: 700px){
   .tasksListItem {
+    align-items: center;
     flex-direction: column;
   }
 }

@@ -1,0 +1,62 @@
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.editTask {
+  align-items: center;
+  background-color: #CBC5EA;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.finishTaskButton {
+  background-color: #3590F3;
+  color: #EAEAEA;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.finishTaskButton:hover {
+  background-color: #963484;
+  color: #0D0106;
+  cursor: pointer;
+  transition-duration: .5s;
+  transform: scale(1.1);
+}
+
+.taskItem {
+  border-bottom: #0D0106 dashed thin;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.taskItem:hover {
+  transform: scaleX(1.01);
+  transition: 1s;
+}
+
+.deleteTaskButton {
+  background-color: #e71f1f;
+  border-radius: .5rem;
+  color: #EAEAEA;
+  padding: .2rem;
+  margin: auto;
+}
+
+.deleteTaskButton:hover {
+  background-color: #963484;
+  color: #0D0106;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+  .editTask {
+    flex-direction: column;
+  }
+}

@@ -4,7 +4,7 @@ import './createtask.css';
 
 function CreateTask() {
   const [task, setTask] = useState('');
-  const [status, setStatus] = useState('pendente');
+  const [status, setStatus] = useState('');
   const url = 'http://localhost:3001/tasks';
   const getTask = (event) => {
     setTask(event.target.value);
@@ -17,9 +17,10 @@ function CreateTask() {
   const createTask = async () => (
     axios.post(url, { task, status })
   );
+
   return (
     <div className="createTask">
-      <input type="text" name="tasks" id="tasks" maxLength="31" placeholder="digite sua tarefa aqui..." onChange={getTask}/>
+      <input type="text" name="tasks" id="tasks" maxLength="3" placeholder="digite sua tarefa aqui..." onChange={getTask} required />
 
       <label htmlFor="pendente">
         Pendente

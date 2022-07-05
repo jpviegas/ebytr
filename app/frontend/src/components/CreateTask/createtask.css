@@ -1,23 +1,32 @@
 .createTask {
   align-items: center;
-  background-color: #EAEAEA;
+  background-color: #CBC5EA;
   display: flex;
   justify-content: space-evenly;
   padding: 4rem ;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 .createTaskButton {
   background-color: #3590F3;
+  border-radius: .5rem;
   color: #EAEAEA;
   padding: .5rem;
-  border-radius: .5rem;
-  border-style: unset;
+  text-align: center;
 }
 
 .createTaskButton:hover {
   background-color: #963484;
   color: #0D0106;
+  cursor: pointer;
+  transition-duration: .5s;
+  transform: scale(1.1);
+}
+
+.createTaskButton:active {
+  transform: translateX(2rem);
+  transition-duration: .5s;
 }
 
 @media only screen and (max-width: 700px){
