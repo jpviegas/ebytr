@@ -1,3 +1,8 @@
+.about > h2 > a {
+  color: blue;
+  text-decoration: underline;
+}
+
 .about {
   align-items: center;
   background-image: linear-gradient(140deg, #EAEAEA 0%, #BC70A4 50%, #963484 75%);

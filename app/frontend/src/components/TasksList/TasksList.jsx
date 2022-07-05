@@ -39,7 +39,7 @@ function TasksList() {
         <div className="editTaskButton" role="button" onKeyDown={null} tabIndex={0}>
           <Link to={`/${task.id}`}>Editar tarefa</Link>
         </div>
-        <div className="deleteTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={() => { deleteTask(task.id); }}>
+        <div className="deleteTaskButton" role="button" onKeyDown={(e) => ((e.key === 'Enter') ? deleteTask(task.id) : null)} tabIndex={0} onClick={() => { deleteTask(task.id); }}>
           Deletar tarefa
         </div>
       </div>
@@ -58,7 +58,7 @@ function TasksList() {
         </select>
         {!data ? null : <ul>{fetchMap}</ul>}
       </div>
-      <div className="deleteAllTasksButton" role="button" onKeyDown={null} tabIndex={0} onClick={() => { deleteTask(0); }}>
+      <div className="deleteAllTasksButton" role="button" onKeyDown={(e) => ((e.key === 'Enter') ? deleteTask(0) : null)} tabIndex={0} onClick={() => { deleteTask(0); }}>
         Deletar todas as tarefas
       </div>
     </div>

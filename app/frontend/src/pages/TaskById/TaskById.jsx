@@ -51,7 +51,7 @@ function TaskById() {
         Data:
         {item.date}
       </li>
-      <div className="deleteTaskButton" role="button" onKeyDown={null} tabIndex={0} onClick={() => { deleteTask(params.id); }}>
+      <div className="deleteTaskButton" role="button" onKeyDown={(e) => ((e.key === 'Enter') ? deleteTask(params.id) : null)} tabIndex={0} onClick={() => { deleteTask(params.id); }}>
         Deletar tarefa
       </div>
     </div>
