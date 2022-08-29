@@ -1,6 +1,5 @@
 .createTask {
   align-items: center;
-  background-color: #CBC5EA;
   display: flex;
   justify-content: space-evenly;
   padding: 4rem ;
@@ -11,7 +10,6 @@
 .createTaskButton {
   background-color: #3590F3;
   border-radius: .5rem;
-  color: #EAEAEA;
   padding: .5rem;
   text-align: center;
 }
@@ -27,6 +25,10 @@
 .createTaskButton:active {
   transform: translateX(2rem);
   transition-duration: .5s;
+}
+
+input {
+  color: black;
 }
 
 @media only screen and (max-width: 700px){

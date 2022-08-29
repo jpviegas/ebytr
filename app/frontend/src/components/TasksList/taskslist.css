@@ -2,7 +2,7 @@ ul {
   list-style: none;
 }
 
-li { 
+li {
   margin: auto;
 }
 
@@ -10,9 +10,12 @@ label {
   cursor: pointer;
 }
 
+select, option {
+  color: black;
+}
+
 .taskListContainer {
   align-items: center;
-  background-image: linear-gradient(140deg, #EAEAEA 0%, #BC70A4 50%, #963484 75%);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -21,7 +24,6 @@ label {
 }
 
 .tasksList {
-  /* padding: 4rem; */
   width: 80%;
 }
 
@@ -31,7 +33,7 @@ label {
 }
 
 .tasksListItem {
-  border-bottom: #0D0106 dashed thin;
+  border-bottom: dashed thin;
   display: flex;
   padding: 1rem;
   width: 100%;
@@ -61,7 +63,11 @@ label {
 }
 
 .editTaskButton:hover {
-  background-color: #963484;
+  background-color: #EAEAEA;
+}
+
+.editTaskButton:hover > a {
+  color: #0D0106;
 }
 
 .editTaskButton:active {
